@@ -20,30 +20,14 @@ import {CarTool} from './components/car-tool';
     hexCode : "00000TTF"
 }];
 
-
 const carList = [
-    {
-        carMake: "Audi", 
-        carModel: "Q7", 
-        year: 2015, 
-        carColor: "Black", 
-        carPrice: 60000
-    },
-    {
-        carMake: "Chevy", 
-        carModel: "Bolt", 
-        year: 2015, 
-        carColor: "Grey", 
-        carPrice: 40000
-    },
-    {
-        carMake: "BMW", 
-        carModel: "i3", 
-        year: 2015, 
-        carColor: "Black", 
-        carPrice: 70000
-    }            
-];
+    { id: 1, make: 'Chevrolet', model: 'Volt', year: 2016, color: 'blue', price: 45000 },
+    { id: 2, make: 'Chevrolet', model: 'Bolt', year: 2017, color: 'red', price: 34000 },
+    { id: 3, make: 'Ford', model: 'Fusion', year: 2018, color: 'orange', price: 55000 },
+    { id: 4, make: 'Chevrolet', model: 'Volt', year: 2016, color: 'blue', price: 45000 },
+    { id: 5, make: 'Chevrolet', model: 'Bolt', year: 2017, color: 'red', price: 34000 },
+    { id: 6, make: 'Ford', model: 'Fusion', year: 2018, color: 'orange', price: 55000 }, 
+  ];
 
 ReactDOM.render(
     <div>

@@ -1,14 +1,29 @@
-import * as React from 'react';
+import React from 'react';
 
 export class CarRow extends React.Component {
 
-    render() {
-        return <tr >
-            <td>{this.props.cars.carMake} </td>  
-            <td>{this.props.carModel}</td>
-            <td>{this.props.year}</td>
-            <td>{this.props.carColor}</td>
-            <td>${this.props.carPrice}</td>
-            </tr> 
-    }
+  deleteCar = () => {
+    this.props.onDeleteCar(this.props.car);
+  };
+
+  render() {
+      // const car = this.props.CarRow;
+    return <tr>
+      <td>{this.props.car.make}</td>
+      <td>{this.props.car.model}</td>
+      <td>{this.props.car.year}</td>
+      <td>{this.props.car.color}</td>
+      <td>{this.props.car.price}</td>
+      <td><button onClick={this.deleteCar}>Delete</button></td>
+    </tr>;
+  }
+
+
 }
+
+
+
+export const ToolHeader = props => 
+    <header>
+        <h1>{props.headerText}</h1>
+    </header>

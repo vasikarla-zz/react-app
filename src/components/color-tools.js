@@ -1,62 +1,31 @@
 import * as React from 'react';
-import {ToolHeader} from './tool-header';
 
-export class ColorTool extends React.Component{
+import { ToolHeader } from './tool-header';
+import { UnorderedList } from './unordered-list';
+import { ColorForm } from './color-form';
+import * as PropTypes from 'prop-types';
 
-    constructor(props){
-        super(props);
+export class ColorTool extends React.Component {
 
-        this.state = {
-            colors: props.colors.concat(),
-            colorName: '',
-            colorHexCode: '',
-        };
+  static propTypes = {
+    colors: PropTypes.array.isRequired
+  }
 
-        // this.onChange = this.onChange.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.state = { colors: props.colors.concat() };
+  }
 
-    onChange = (e) => {
+  saveColor = (newColor) => {
+    this.setState({ colors: this.state.colors.concat(newColor) });
+  }
 
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-
-    }
-
-    saveColor = (e) => {
-        this.setState({
-            colors: this.state.colors.concat({
-                name: this.state.colorName,
-                hexCode: this.state.colorHexCode,
-            }),
-            colorName: "",
-            colorHexCode: "",
-        });
-    }
-
-    render(){
-        return <div>
-                    <ToolHeader headerText="ColorTool"/>
-                    <ul>
-                        {this.state.colors.map((color) => <li>{color.name}</li>)}
-                    </ul>
-                    <form>
-                        <div>
-                            <label htmlFor="color-name-input">Color Name:</label>
-                            <input type="text" id-="color-name-input" 
-                                   name= "colorName"
-                                   value={this.state.colorName} 
-                                   onChange={this.onChange}/>
-                        </div>    
-                        <div>
-                            <label htmlFor="color-hexcode-input">Color Name:</label>
-                            <input type="color" id-="color-hexcode-input" 
-                                   name= "colorHexCode"
-                                   value={this.state.colorHexCode} 
-                                   onChange={this.onChange}/>
-                        </div>        
-                        <button type="button" onClick={this.saveColor}>Save Color</button>                                        
-                    </form>
-               </div>
-    }
+  render() {
+    return <div>
+      {/* <ToolHeader headerText="Color Tool" /> */}
+      <ToolHeader />
+      <UnorderedList listItems={this.state.colors.map(c => c.name)} />
+      <ColorForm onSubmitColor={this.saveColor} />
+    </div>;
+  }
 }
