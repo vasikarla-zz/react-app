@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {ToolHeader} from './tool-header';
 import {CarTable} from './car-table';
-
 export class CarTool extends React.Component {
 
     constructor(props){
@@ -45,7 +44,8 @@ export class CarTool extends React.Component {
     render() {
         return <div >
                     <ToolHeader headerText="Car Tool Header"/>
-                    <table border="1" >
+                    <CarTable cars={this.state.cars}/>
+                    {/* <table border="1" >
                         <thead> 
                             <tr bgcolor="cyan">
                             <th> Make</th> 
@@ -65,7 +65,7 @@ export class CarTool extends React.Component {
                                 </tr> 
                                 )}                             
                         </tbody>                        
-                    </table> 
+                    </table>  */}
                     <form broder="2">
                     <fieldset width="2px">
                     <legend>Car Tool Form</legend>
