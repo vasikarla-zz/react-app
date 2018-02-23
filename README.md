@@ -1,5 +1,7 @@
 # Welcome to Introduction to React Class
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/vasikarla/react-app.svg)](https://greenkeeper.io/)
+
 ## Instructor
 
 Eric Greene - [http://t4d.io](http://t4d.io) - [LinkedIn](https://www.linkedin.com/in/ericwgreene)
